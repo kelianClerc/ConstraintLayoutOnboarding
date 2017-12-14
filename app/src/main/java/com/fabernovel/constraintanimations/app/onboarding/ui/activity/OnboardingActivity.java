@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Toast;
 
 import com.fabernovel.constraintanimations.R;
 import com.fabernovel.constraintanimations.app.common.BaseActivity;
@@ -17,6 +18,7 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class OnboardingActivity extends BaseActivity implements OnboardingViewContract {
 
@@ -62,5 +64,10 @@ public class OnboardingActivity extends BaseActivity implements OnboardingViewCo
     public void onBackPressed() {
         super.onBackPressed();
         overridePendingTransition(android.R.anim.fade_in, R.anim.slide_down);
+    }
+
+    @OnClick(R.id.add_button)
+    public void onAddClicked() {
+        Toast.makeText(this, "Open gallery", Toast.LENGTH_SHORT).show();
     }
 }

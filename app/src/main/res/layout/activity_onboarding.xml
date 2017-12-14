@@ -10,7 +10,7 @@
         android:id="@+id/toolbar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
+        android:background="@color/chathams_blue"
         android:minHeight="?attr/actionBarSize"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,4 +19,79 @@
         app:title="Onboarding"
         app:titleTextColor="@color/white"
         />
+    <TextView
+        android:id="@+id/message_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/unit_1"
+        android:layout_marginTop="@dimen/unit_1"
+        android:background="@drawable/message_user_a"
+        android:padding="@dimen/unit_1"
+        android:text="Hello how are you today ?"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        />
+
+    <TextView
+        android:id="@+id/message_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/unit_1"
+        android:layout_marginTop="@dimen/unit_1"
+        android:background="@drawable/message_user_b"
+        android:padding="@dimen/unit_1"
+        android:text="Hello how are you today ?"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/message_one"
+        />
+    <TextView
+        android:id="@+id/message_three"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/unit_1"
+        android:layout_marginTop="@dimen/unit_1"
+        android:background="@drawable/message_user_b"
+        android:padding="@dimen/unit_1"
+        android:text="Hello how are you today ?"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/message_two"
+        />
+    <View
+        android:id="@+id/edit_part"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/unit_6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@color/dark_sky_blue_40"
+        />
+    <EditText
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintTop_toTopOf="@id/edit_part"
+        app:layout_constraintBottom_toBottomOf="@id/edit_part"
+        app:layout_constraintStart_toStartOf="@id/edit_part"
+        app:layout_constraintEnd_toStartOf="@+id/add_button"
+        android:layout_marginStart="@dimen/unit_2"
+        android:layout_marginEnd="@dimen/unit_1"
+        android:layout_marginBottom="@dimen/unit_2"
+        android:layout_marginTop="@dimen/unit_2"
+        android:padding="4dp"
+        />
+    <ImageButton
+        android:id="@+id/add_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_add"
+
+        app:layout_constraintTop_toTopOf="@id/edit_part"
+        app:layout_constraintBottom_toBottomOf="@id/edit_part"
+        app:layout_constraintEnd_toEndOf="@id/edit_part"
+        android:layout_marginEnd="@dimen/unit_2"
+        />
+
 </android.support.constraint.ConstraintLayout>
