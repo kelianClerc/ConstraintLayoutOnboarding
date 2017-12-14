@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    android:id="@+id/constraint"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <TextView
+        android:id="@+id/message_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/unit_1"
+        android:layout_marginTop="@dimen/unit_1"
+        android:background="@drawable/message_user_a"
+        android:padding="@dimen/unit_1"
+        android:text="Hello how are you today ?"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        />
+    <View
+        android:id="@+id/mask"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@color/dark_mask"
+        />
+    <TextView
+        android:id="@+id/message_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/unit_1"
+        android:layout_marginTop="@dimen/unit_1"
+        android:background="@drawable/message_user_b"
+        android:padding="@dimen/unit_1"
+        android:text="Hello how are you today ?"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/message_one"
+        android:translationZ="2dp"
+        />
+    <TextView
+        android:id="@+id/hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="@dimen/unit_1"
+        android:text="Here you can read your friend messages"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/message_two"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="@dimen/unit_2"
+        android:layout_marginEnd="@dimen/unit_2"
+        android:layout_marginTop="@dimen/unit_1"
+        android:drawableStart="@drawable/ic_info"
+        android:drawablePadding="@dimen/unit_1"
+        />
+    <Button
+        android:id="@+id/continue_onboarding"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Continuer"
+        app:layout_constraintTop_toBottomOf="@+id/hint"
+        app:layout_constraintStart_toStartOf="@+id/hint"
+        app:layout_constraintEnd_toEndOf="@+id/hint"
+        />
+
+</android.support.constraint.ConstraintLayout>
