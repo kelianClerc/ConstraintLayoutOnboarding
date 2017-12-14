@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 
 import com.fabernovel.constraintanimations.app.main.ui.MainViewContract;
+import com.fabernovel.constraintanimations.app.onboarding.ui.OnboardingViewContract;
 import com.fabernovel.constraintanimations.di.common.ApplicationComponent;
 import com.fabernovel.constraintanimations.di.common.ContextModule;
 import com.fabernovel.constraintanimations.di.common.DaggerApplicationComponent;
@@ -18,6 +19,9 @@ import com.fabernovel.constraintanimations.di.logging.LoggingModule;
 import com.fabernovel.constraintanimations.di.main.DaggerMainComponent;
 import com.fabernovel.constraintanimations.di.main.MainComponent;
 import com.fabernovel.constraintanimations.di.main.MainModule;
+import com.fabernovel.constraintanimations.di.onboarding.DaggerOnboardingComponent;
+import com.fabernovel.constraintanimations.di.onboarding.OnboardingComponent;
+import com.fabernovel.constraintanimations.di.onboarding.OnboardingModule;
 import com.fabernovel.constraintanimations.di.threading.ThreadingComponent;
 import com.fabernovel.constraintanimations.di.threading.ThreadingModule;
 import com.fabernovel.constraintanimations.di.trace.TracerModule;
@@ -124,5 +128,16 @@ public class ComponentManager {
                 .build();
         }
         return mainComponent;
+    }
+
+    public static OnboardingComponent getOnboardingComponent(
+        Context context, OnboardingViewContract viewContract
+    ) {
+        return DaggerOnboardingComponent
+            .builder()
+            .applicationComponent(getApplicationComponent())
+            .onboardingModule(new OnboardingModule(viewContract))
+            .contextModule(new ContextModule(context))
+            .build();
     }
 }

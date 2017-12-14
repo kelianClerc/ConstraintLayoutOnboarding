@@ -9,8 +9,11 @@ import android.view.View;
 
 import com.fabernovel.constraintanimations.R;
 import com.fabernovel.constraintanimations.app.common.BaseActivity;
+import com.fabernovel.constraintanimations.app.onboarding.presenter.OnboardingPresenter;
 import com.fabernovel.constraintanimations.app.onboarding.ui.OnboardingViewContract;
 import com.fabernovel.constraintanimations.di.ComponentManager;
+
+import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -19,13 +22,15 @@ public class OnboardingActivity extends BaseActivity implements OnboardingViewCo
 
     @BindView(R.id.toolbar) Toolbar toolbar;
 
+    @Inject OnboardingPresenter presenter;
+
     public static Intent makeIntent(Context context) {
         return new Intent(context, OnboardingActivity.class);
     }
 
     @Override
     protected void injectDependencies() {
-        ComponentManager.getLoggingComponent().inject(this);
+        ComponentManager.getOnboardingComponent(this, this).inject(this);
     }
 
     @Override
