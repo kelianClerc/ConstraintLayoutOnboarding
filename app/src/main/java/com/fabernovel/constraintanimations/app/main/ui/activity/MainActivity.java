@@ -52,4 +52,9 @@ public class MainActivity extends BaseActivity implements MainViewContract {
     public void onSingleViewMovingButton() {
         presenter.singleViewMoving();
     }
+
+    @OnClick(R.id.onboarding_button)
+    public void onOnboardingButton() {
+        presenter.onBoarding();
+    }
 }

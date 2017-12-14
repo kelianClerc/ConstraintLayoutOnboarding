@@ -4,4 +4,5 @@
     <string name="error_unreachable_service_message">"Serveur injoignable. Vérifiez votre connexion."</string>
     <string name="error_unavailable_service_message">"Serveur indisponible. Réessayer dans un instant."</string>
     <string name="main_single_view_title">Single View Moving</string>
+    <string name="main_on_boarding_title">Onboarding</string>
 </resources>
