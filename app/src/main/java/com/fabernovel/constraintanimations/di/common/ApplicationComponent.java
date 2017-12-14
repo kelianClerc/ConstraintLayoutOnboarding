@@ -1,7 +1,6 @@
 package com.fabernovel.constraintanimations.di.common;
 
 import com.fabernovel.constraintanimations.app.ConstraintAnimationsApplication;
-import com.fabernovel.constraintanimations.core.boundary.ExampleRepository;
 import com.fabernovel.constraintanimations.di.crashes.CrashesComponent;
 import com.fabernovel.constraintanimations.di.crashes.CrashesModule;
 import com.fabernovel.constraintanimations.di.logging.LoggingComponent;
@@ -32,8 +31,6 @@ public interface ApplicationComponent {
     void inject(ConstraintAnimationsApplication application);
 
     Logger logger();
-
-    ExampleRepository exampleRepository();
 
     LoggingComponent.Builder loggingComponentBuilder();
     CrashesComponent plus(CrashesModule module);

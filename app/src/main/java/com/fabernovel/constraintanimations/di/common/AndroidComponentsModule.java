@@ -2,7 +2,7 @@ package com.fabernovel.constraintanimations.di.common;
 
 import android.app.Activity;
 
-import com.fabernovel.constraintanimations.app.example.ui.activity.ExampleActivity;
+import com.fabernovel.constraintanimations.app.main.ui.activity.MainActivity;
 import com.fabernovel.constraintanimations.di.PerActivity;
 import com.fabernovel.constraintanimations.di.example.ExampleSubcomponent;
 
@@ -18,7 +18,7 @@ public abstract class AndroidComponentsModule {
 
     @Binds
     @IntoMap
-    @ActivityKey(ExampleActivity.class)
+    @ActivityKey(MainActivity.class)
     abstract AndroidInjector.Factory<? extends Activity>
         bindExampleInjectorFactory(ExampleSubcomponent.Builder builder);
 }

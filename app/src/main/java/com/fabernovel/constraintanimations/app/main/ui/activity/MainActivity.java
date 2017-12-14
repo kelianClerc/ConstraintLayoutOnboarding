@@ -1,4 +1,4 @@
-package com.fabernovel.constraintanimations.app.example.ui.activity;
+package com.fabernovel.constraintanimations.app.main.ui.activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,8 +8,8 @@ import android.widget.TextView;
 
 import com.fabernovel.constraintanimations.R;
 import com.fabernovel.constraintanimations.app.common.BaseActivity;
-import com.fabernovel.constraintanimations.app.example.presenter.ExamplePresenter;
-import com.fabernovel.constraintanimations.app.example.ui.ExampleViewContract;
+import com.fabernovel.constraintanimations.app.main.presenter.MainPresenter;
+import com.fabernovel.constraintanimations.app.main.ui.MainViewContract;
 import com.fabernovel.constraintanimations.utils.theme.ThemeUtils;
 
 import javax.inject.Inject;
@@ -17,9 +17,9 @@ import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class ExampleActivity extends BaseActivity implements ExampleViewContract {
+public class MainActivity extends BaseActivity implements MainViewContract {
 
-    @Inject ExamplePresenter presenter;
+    @Inject MainPresenter presenter;
 
     @BindView(R.id.readme) TextView readMe;
 
