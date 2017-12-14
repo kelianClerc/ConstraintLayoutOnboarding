@@ -1,6 +1,5 @@
 package com.fabernovel.constraintanimations.di.common;
 
-import com.fabernovel.constraintanimations.app.ConstraintAnimationsApplication;
 import com.fabernovel.constraintanimations.di.crashes.CrashesComponent;
 import com.fabernovel.constraintanimations.di.crashes.CrashesModule;
 import com.fabernovel.constraintanimations.di.logging.LoggingComponent;
@@ -28,8 +27,6 @@ import dagger.android.support.AndroidSupportInjectionModule;
     AndroidComponentsModule.class
 })
 public interface ApplicationComponent {
-    void inject(ConstraintAnimationsApplication application);
-
     Logger logger();
 
     LoggingComponent.Builder loggingComponentBuilder();

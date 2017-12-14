@@ -4,7 +4,9 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 
+import com.fabernovel.constraintanimations.app.main.ui.MainViewContract;
 import com.fabernovel.constraintanimations.di.common.ApplicationComponent;
+import com.fabernovel.constraintanimations.di.common.ContextModule;
 import com.fabernovel.constraintanimations.di.common.DaggerApplicationComponent;
 import com.fabernovel.constraintanimations.di.common.PreferencesModule;
 import com.fabernovel.constraintanimations.di.common.RepositoryModule;
@@ -13,6 +15,9 @@ import com.fabernovel.constraintanimations.di.crashes.CrashesComponent;
 import com.fabernovel.constraintanimations.di.crashes.CrashesModule;
 import com.fabernovel.constraintanimations.di.logging.LoggingComponent;
 import com.fabernovel.constraintanimations.di.logging.LoggingModule;
+import com.fabernovel.constraintanimations.di.main.DaggerMainComponent;
+import com.fabernovel.constraintanimations.di.main.MainComponent;
+import com.fabernovel.constraintanimations.di.main.MainModule;
 import com.fabernovel.constraintanimations.di.threading.ThreadingComponent;
 import com.fabernovel.constraintanimations.di.threading.ThreadingModule;
 import com.fabernovel.constraintanimations.di.trace.TracerModule;
@@ -25,6 +30,7 @@ public class ComponentManager {
     private static LoggingComponent loggingComponent;
     private static ThreadingComponent threadingComponent;
     private static CrashesComponent crashesComponent;
+    private static MainComponent mainComponent;
 
     public static void init(
         SharedPreferences preferences, File cacheDirectory, Context applicationContext
@@ -104,5 +110,19 @@ public class ComponentManager {
     private static void fail() {
         String message = "ComponentManager.init() was not called on Application#onCreate()";
         throw new RuntimeException(message);
+    }
+
+    public static MainComponent getMainComponent(Context context, MainViewContract viewContract) {
+        if (mainComponent == null) {
+            ContextModule contextModule = new ContextModule(context);
+            MainModule mainModule = new MainModule(viewContract);
+            mainComponent = DaggerMainComponent
+                .builder()
+                .applicationComponent(getApplicationComponent())
+                .contextModule(contextModule)
+                .mainModule(mainModule)
+                .build();
+        }
+        return mainComponent;
     }
 }

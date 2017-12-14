@@ -30,6 +30,11 @@ public class MainActivity extends BaseActivity implements MainViewContract {
         setupView();
     }
 
+    @Override
+    protected void injectDependencies() {
+        ComponentManager.getMainComponent(this, this).inject(this);
+    }
+
     private void setupView() {
         setContentView(R.layout.activity_example);
         ButterKnife.bind(this);
