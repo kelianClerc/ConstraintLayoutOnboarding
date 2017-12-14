@@ -1,0 +1,24 @@
+buildscript {
+    apply from: 'dependencies.gradle'
+    repositories {
+        jcenter()
+        maven { url 'https://jitpack.io' }
+        maven { url "https://plugins.gradle.org/m2/" } // for gradle-config
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:$pluginsVersion.androidGradle"
+        classpath "com.polidea.android:config:$pluginsVersion.gradleConfig"
+        classpath "com.github.Archinamon:GradleAspectJ-Android:$pluginsVersion.androidAspectJ"
+        classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:$pluginsVersion.sonarqubeGradle"
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        maven { url "https://maven.google.com" } // for support-library
+    }
+}
+
+apply from: 'dependencies.gradle'
+apply from: 'tasks.gradle'

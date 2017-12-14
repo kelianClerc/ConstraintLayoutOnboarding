@@ -1,0 +1,10 @@
+<manifest
+    package="com.fabernovel.constraintanimations"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <application
+        android:name=".app.DebugConstraintAnimationsApplication"
+        tools:replace="android:name"
+        />
+</manifest>
