@@ -5,6 +5,9 @@ import android.content.Intent;
 
 import com.fabernovel.constraintanimations.app.singleviewmoving.ui.activity.SingleViewMovingActivity;
 
+
+import com.fabernovel.constraintanimations.utils.NavigatorUtils;
+
 import javax.inject.Inject;
 
 public class MainNavigator {
@@ -16,6 +19,6 @@ public class MainNavigator {
 
     public void navigateToSingleViewMoving() {
         Intent intent = SingleViewMovingActivity.makeIntent(context);
-        context.startActivity(intent);
+        context.startActivity(intent, NavigatorUtils.getUpBundle(context));
     }
 }
