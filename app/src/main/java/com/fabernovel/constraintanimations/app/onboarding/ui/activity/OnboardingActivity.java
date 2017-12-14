@@ -70,4 +70,8 @@ public class OnboardingActivity extends BaseActivity implements OnboardingViewCo
     public void onAddClicked() {
         Toast.makeText(this, "Open gallery", Toast.LENGTH_SHORT).show();
     }
+    @Override
+    public void showOnboarding() {
+        // TODO (kelianclerc) 14/12/17  
+    }
 }

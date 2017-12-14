@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
+    android:id="@+id/constraint"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -69,6 +70,7 @@
         android:background="@color/dark_sky_blue_40"
         />
     <EditText
+        android:id="@+id/add_text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/white"
@@ -92,6 +94,44 @@
         app:layout_constraintBottom_toBottomOf="@id/edit_part"
         app:layout_constraintEnd_toEndOf="@id/edit_part"
         android:layout_marginEnd="@dimen/unit_2"
+        />
+
+    <View
+        android:id="@+id/mask"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="parent"
+        android:background="@color/dark_mask"
+        android:translationZ="2dp"
+        />
+    <TextView
+        android:id="@+id/hint"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:padding="@dimen/unit_1"
+        android:text="Here you can read your friend messages"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="@dimen/unit_2"
+        android:layout_marginEnd="@dimen/unit_2"
+        android:layout_marginTop="@dimen/unit_1"
+        android:drawableStart="@drawable/ic_info"
+        android:drawablePadding="@dimen/unit_1"
+        />
+    <Button
+        android:id="@+id/continue_onboarding"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:text="Continuer"
+        app:layout_constraintTop_toBottomOf="@+id/hint"
+        app:layout_constraintStart_toStartOf="@+id/hint"
+        app:layout_constraintEnd_toEndOf="@+id/hint"
         />
 
 </android.support.constraint.ConstraintLayout>
