@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    android:id="@+id/constraint"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+    <TextView
+        android:id="@+id/third"
+        android:layout_width="@dimen/view_example_width"
+        android:layout_height="wrap_content"
+        android:background="@color/mine_shaft"
+        android:gravity="center"
+        android:padding="@dimen/unit_2"
+        android:text="View moving"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+    <TextView
+        android:id="@+id/second"
+        android:layout_width="@dimen/view_example_width"
+        android:layout_height="wrap_content"
+        android:background="@color/blue_whale"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="Second text"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+    <TextView
+        android:id="@+id/first"
+        android:layout_width="@dimen/view_example_width"
+        android:layout_height="wrap_content"
+        android:background="@color/eastern_blue"
+        android:gravity="center"
+        android:padding="@dimen/unit_2"
+        android:text="View moving"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+</android.support.constraint.ConstraintLayout>

@@ -1,6 +1,5 @@
 package com.fabernovel.constraintanimations.app;
 
-import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -22,23 +21,16 @@ import org.aspectj.lang.Aspects;
 
 import java.io.File;
 
-import javax.inject.Inject;
-
-import dagger.android.AndroidInjector;
-import dagger.android.DispatchingAndroidInjector;
-import dagger.android.HasActivityInjector;
 import timber.log.Timber;
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 
-public class ConstraintAnimationsApplication extends Application implements HasActivityInjector {
+public class ConstraintAnimationsApplication extends Application {
 
     protected static final String DEFAULT_FONT = "fonts/GillSansMT.ttf";
     protected static final String PREFS_NAME = "ConstraintAnimations";
 
     protected static final boolean HOCKEY_APP_ENABLED = Settings.crashes.enabled;
     protected static final String HOCKEY_APP_KEY = Settings.crashes.app_id;
-
-    @Inject DispatchingAndroidInjector<Activity> dispatchingActivityInjector;
 
     @Override
     public void onCreate() {
@@ -84,7 +76,6 @@ public class ConstraintAnimationsApplication extends Application implements HasA
         SharedPreferences preferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
         File cacheDirectory = getCacheDir();
         ComponentManager.init(preferences, cacheDirectory, getApplicationContext());
-        ComponentManager.getApplicationComponent().inject(this);
     }
 
     private void setupDatabase() {
@@ -103,10 +94,5 @@ public class ConstraintAnimationsApplication extends Application implements HasA
         if (BuildConfig.DEBUG) {
             Timber.plant(new Timber.DebugTree());
         }
-    }
-
-    @Override
-    public AndroidInjector<Activity> activityInjector() {
-        return dispatchingActivityInjector;
     }
 }

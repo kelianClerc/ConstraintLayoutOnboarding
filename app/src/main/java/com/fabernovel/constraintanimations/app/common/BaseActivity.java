@@ -4,25 +4,28 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.fabernovel.constraintanimations.utils.logging.Logger;
 
 import javax.inject.Inject;
 
-import dagger.android.support.DaggerAppCompatActivity;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
-public abstract class BaseActivity extends DaggerAppCompatActivity {
+public abstract class BaseActivity extends AppCompatActivity {
 
     @Inject protected Logger logger;
     private OnDrawnListener onDrawnListener;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+        injectDependencies();
         super.onCreate(savedInstanceState);
         logger.v(this, "onCreate(savedInstanceState: " + savedInstanceState + ")");
     }
+
+    protected abstract void injectDependencies();
 
     @Override
     public void onContentChanged() {
