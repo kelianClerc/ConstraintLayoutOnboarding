@@ -120,6 +120,7 @@ dependencies {
     compile "uk.co.chrisjenx:calligraphy:$versions.calligraphy"
     compile "com.android.support:design:$versions.androidSupport"
     compile "com.android.support:recyclerview-v7:$versions.androidSupport"
+    compile "com.android.support.constraint:constraint-layout:$versions.constraintLayout"
 
     // Logging
     compile "com.jakewharton.timber:timber:$versions.timber"
