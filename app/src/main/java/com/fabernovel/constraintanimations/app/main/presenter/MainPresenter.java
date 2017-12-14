@@ -29,4 +29,8 @@ public class MainPresenter extends Presenter<MainViewContract> {
     public void singleViewMoving() {
         navigator.navigateToSingleViewMoving();
     }
+
+    public void onBoarding() {
+        navigator.navigateToOnBoarding();
+    }
 }

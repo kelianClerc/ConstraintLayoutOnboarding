@@ -22,6 +22,9 @@
             android:theme="@style/AppTheme.Preview"
             />
         <activity android:name=".app.singleviewmoving.ui.activity.SingleViewMovingActivity"/>
+        <activity
+            android:name=".app.onboarding.ui.activity.OnboardingActivity"
+            android:windowSoftInputMode="adjustResize|stateHidden"/>
 
         <activity-alias
             android:name=".Launcher"

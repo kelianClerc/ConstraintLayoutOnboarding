@@ -9,4 +9,8 @@
     <color name="silver">#cccccc</color>
     <color name="white">#ffffff</color>
     <color name="transparent">#ffffffff</color>
+    <color name="dark_sky_blue">#4a8fed</color>
+    <color name="dark_sky_blue_40">#664a8fed</color>
+    <color name="avocado">#89bb38</color>
+    <color name="dark_mask">#AA000000</color>
 </resources>
